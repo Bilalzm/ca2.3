@@ -3,7 +3,7 @@
     <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta charset="UTF-8"/>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 	<style>
 		body { background-color:lightblue; }
 		.footer { font-weight: bold; color:blueviolet; background-color: lightblue; }
@@ -15,28 +15,28 @@
 	<title>SPINITT</title>
     </head>
     <body>
-		<nav class="navbar navbar-inverse">
+		<nav class="navbar navbar-expand-sm bg-dark">
 	    <div class="container-fluid">
 			<div class="navbar-header ">
-		    	<a class="navbar-brand" href="#">SPINITT</a>
+		    	<a class="navbar-brand" href="/shop/">SPINITT</a>
 			</div>
-			<ul class="nav navbar-nav">
+			<ul class="navbar-nav">
 				{% if request.user.is_authenticated %}
-            	<li>
-					<a href="{% url 'products' %}">Products</a>
+            	<li class="nav-item">
+					<a class="nav-link" href="{% url 'products' %}">Products</a>
 				</li>
-		    	<li>
-					<a href="{% url 'signout' %}">Sign Out <i class="fas fa-sign-out-alt"></i></a>
+		    	<li class="nav-item">
+					<a class="nav-link" href="{% url 'signout' %}">Sign Out <i class="fas fa-sign-out-alt"></i></a>
 				</li>
-				<li>
-					<a href="{% url 'order_history' %}">View Orders <i class="fas fa-sign-out-alt"></i></a>
+				<li class="nav-item">
+					<a class="nav-link" href="{% url 'order_history' %}">View Orders <i class="fas fa-sign-out-alt"></i></a>
 				</li>
 				{% else%}
-				<li>
-					<a href="{% url 'signup' %}">Sign Up <i class="fas fa-user-plus"></i></a>
+				<li class="nav-item">
+					<a class="nav-link" href="{% url 'signup' %}">Sign Up <i class="fas fa-user-plus"></i></a>
 				</li>
 				<li>
-					<a href="{% url 'signin' %}">Sign In <i class="fas fa-sign-in-alt"></i></a>
+					<a class="nav-link" href="{% url 'signin' %}">Sign In <i class="fas fa-sign-in-alt"></i></a>
 				</li>
 				{% endif %}
 				{% if item_count > 0 %}
@@ -52,29 +52,29 @@
 	<div class="container-fluid">
 	    <div class="row">
 		<div class="col-sm-3">
-		    <div class="well sidecol">
+		    <div class="bg-primary p-2">
 			<h2>News</h2>
-			<h3>New products!</h3>
-			<p><span class="redtext">Keep Up With The Latest Spinners
+			<h3 class="text-light">New products!</h3>
+			<p><span class="text-light">Keep Up With The Latest Spinners
 		    </div>
 		</div>
 		<div class="col-sm-6">
-		    <div class="midcol">
+			<div class="">
                 {% block content %}
                 {% endblock content %}
 		    </div>
 		</div>
 		<div class="col-sm-3">
-		    <div class="well sidecol">
+		    <div class="bg-primary p-2">
 			<h2>Events</h2>
-			<h3>Coming Soon</h3>
-			<p><span class="redtext">Stay Tuned, Keep Practising!</span></p>
+			<h3 class="text-light">Coming Soon</h3>
+			<p><span class="text-light">Stay Tuned, Keep Practising!</span></p>
 		    </div>
 		</div>
 	    </div>
 	    <div class="row">
 		<div class="col-sm-12">
-		    <div class="well footer">
+		    <div class="bg-dark footer">
 			Website created by Karlo K. & Bilal M.
 		    </div>
 		</div>
