@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'shop.apps.ShopConfig',
     'cart.apps.CartConfig',
     'order.apps.OrderConfig',
+    'imagekit',
+    'stripe',
     'crispy_forms'
    # 'imagekit',
 ]
@@ -129,3 +131,6 @@ STATIC_URL = '/static/'
 LOGIN_URL = '/account/login/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
+STRIPE_SECRET_KEY = 'sk_test_OoWvupuVMJwD68HQcQ94TtIQ00VIu9argI'
+STRIPE_PUBLISHABLE_KEY ='pk_test_J2XaBm4jJa0l9EWJNj6yQ1W400hnwKuP14'
